@@ -1,0 +1,4 @@
+- @aaas.each do |aaa|
+  %p
+    = aaa.name
+  = link_to 'Show', aaa

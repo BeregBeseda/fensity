@@ -1,0 +1,47 @@
+$(".input-address").click(function(){
+        $("#top_field").text(encodeURIComponent("Ваша персональная информация будет находиться в безопасности"));
+    });
+
+    $(".input-name").click(function(){
+        $("#top_field").text(encodeURIComponent("Как к Вам обращаться"));
+    });
+
+    $(".input-message").click(function(){
+        $("#top_field").text(encodeURIComponent("Если желаете, опишите в нескольких фразах, какую проблему Вы хотите решить"));
+    });
+
+from products/show
+      - $addresser ||= Buyer.new
+      = render partial: 'layouts/content/form2'
+
+from posts/show
+        - $addresser ||= User.new
+        = render partial: 'layouts/content/form2'
+
+
+pers/index
+          #personality
+            #personality_description
+              %h4
+                Чувство подавленности, дискомфорта, заторможенности, пустоты, неудовлетворенности от пустых взаимоотношений. Хочется радости, безопасности, тепла.
+                Чувство подавленности, дискомфорта, заторможенности, пустоты, неудовлетворенности от пустых взаимоотношений. Хочется радости, безопасности, тепла
+
+          = image_tag('products/separator.png', alt: '--------------------', id: 'separator')
+
+
+= render partial: "#{params[:buyer_partial]}"
+&
+redirect_to users_path(user_partial: 'layouts/users/success_created')
+
+
+form3
+%p.my_p
+        = f.text_area :message, {value: 'Сообщение психологу', id: 'redex' , class: 'input-xlarge' ' input-message', cols: '10', rows: '2', 'data-maxsize' => '1000', spellcheck: 'false'}
+
+
+client/index
+    %br/
+    .down_p
+      Также Вы можете:
+  = link_to '- принять участие в ближайших Вебинарах', posts_path, { class: ' clients_btn' ' btn' ' btn-large' ' btn-primary' , style: ' color: white; padding: 8px 5px 8px 5px !important; font-size: 150%; font-family: Verdana, "Bitstream Vera Sans";', onMouseOver: "this.style.backgroundColor='rgb(0, 68, 204)'" }
+  = link_to '- посмотреть записи семинаров, которые доступны для приобретения', products_path, { class: ' clients_btn' ' btn' ' btn-large' ' btn-primary' , style: ' color: white; padding: 8px 5px 8px 5px !important; font-size: 150%; font-family: Verdana, "Bitstream Vera Sans"; ', onMouseOver: "this.style.backgroundColor='rgb(0, 68, 204)'" }

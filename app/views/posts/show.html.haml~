@@ -1,0 +1,2 @@
+%strong Name:
+= @post.name.html_safe

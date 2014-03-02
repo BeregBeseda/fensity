@@ -1,0 +1,4 @@
+#block
+  = render partial: 'layouts/menu_up'
+  %p
+    Success created!!!

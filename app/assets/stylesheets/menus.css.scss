@@ -1,0 +1,40 @@
+#menu {
+  margin: 17px -17px 17px 17px;
+}
+
+.menu_vars {
+  width: 33%;
+  float: left;
+  &:hover P {
+    color: $blue;
+  }
+  A {
+    text-decoration: none;
+    &:active P {
+      color: $dark_blue;
+    }
+  }
+  P {
+    width: 80%;
+    font-size: 110%;
+    color: $dark_blue;
+    text-align: justify;
+    padding: 5px;
+    background: transparent url(http://tryimg.com/4/3iyi.png) no-repeat;
+    @include background-size;
+  }
+  IMG {
+    width: 90%;
+    height: auto;
+  }
+}
+
+#menu_description {
+  P {
+    margin-top: 15px;
+    color: $dark_brown;
+    font-size: 130%;
+    font-weight: 600;
+    text-align: justify;
+  }
+}

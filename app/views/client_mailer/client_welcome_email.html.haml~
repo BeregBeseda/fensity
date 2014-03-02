@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %p
+      Меня зовут #{@client.name}
+    %p
+      - if @client.message !== 'Сообщение психологу'  
+        = @client.message
+    %p
+      Мой E-mail
+      %b
+        = @client.address

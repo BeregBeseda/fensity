@@ -1,0 +1,39 @@
+.menu_up {
+  display: block;
+  UL {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+  }
+  LI {
+    display: inline-block;
+    margin-right: 8px;
+    fond-size: 110%;
+  }
+  A {
+    color: $link_dark_green;
+    display: inline-block;
+    text-decoration: none;
+    &:hover {
+      color: $dark_brown;
+    }
+    &:active, &:focus {
+      color: $light_brown;
+    }
+  }
+  IMG {
+    width: 16px;
+    height: auto;
+    padding-bottom: 2px;
+    opacity: .9;
+  }
+
+}
+
+.icon_opacity {
+  opacity: .9;
+}
+
+.float_left {
+  float: left;
+}
